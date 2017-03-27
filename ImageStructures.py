@@ -8,6 +8,9 @@ class Point(object):
         def __str__(self):
             return "({},{})".format(self.x, self.y)
 
+        def __repr__(self):
+            return self.__str__()
+
 class Line(object):
     def __init__(self, start = Point(), end = Point()):
         self.start = start;
@@ -33,6 +36,12 @@ class Line(object):
     @property
     def iterx(self):
         return self.start.x
+
+    def __str__(self):
+        return "Y: {}, X: {} (magnitude = {})".format(self.start.y,self.start.x, self.magnitude)
+
+    def __repr__(self):
+            return self.__str__()
 
     def __iter__(self):
         self.xcurr = self.iterx
