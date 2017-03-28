@@ -65,8 +65,10 @@ def main():
 
 		crops = getWordRegions(compoundLines)
 
-		for crop in crops:
-			modifyImage(savepath,crop[0],crop[1],savepath)
+		for i,crop in enumerate(crops):
+			name = savepath.split(".")[0]
+			name += "_" + str(i) + ".png"
+			cropOutImageArea(path,crop[0],crop[1],name)
 
 
 def getWordRegions(compoundLines):
@@ -166,7 +168,7 @@ def getAnswerStartPoint(lines,wordsInAnswer):
 def getFirstWordHeight(lines):
 	return lines[0].start.y;
 
-def modifyImage(path, lines, savepath):
+def modifyImageL(path, lines, savepath):
 	image = getImage(path)
 	imgpx = image.load()
 
@@ -175,6 +177,20 @@ def modifyImage(path, lines, savepath):
 			imgpx[x,y] = (255,255,255)
 
 	image.save(savepath)
+
+def cropOutImageArea(path, cp1, cp2, savepath):
+	im = getImage(path)
+	width = im.size[0]
+	height = im.size[1]
+
+	pixeldata = im.load()
+	for i in range(height):
+		for j in range(width):
+			if j not in range(cp1[0],cp2[0]) or i not in range(cp1[1],cp2[1]):
+				pixeldata[j,i] = (255,255,255)
+
+	im.save(savepath)
+
 
 def modifyImage(path, cp1,cp2, savepath):
 	im = getImage(path)
