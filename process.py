@@ -8,6 +8,7 @@ IMAGES = [os.path.join(IMAGES_DIR, IMAGE_PATH) for IMAGE_PATH in IMAGE_FILES]
 
 def main():
 	for path in IMAGES:
+		savepath = path.split(".")[0] + ".png"
 		pixels = getPixels(path)
 		lines = findSignificantHorizontalLines(pixels)
 		wordsInAnswer = getNumberOfWordsInAnswer(lines)
@@ -16,22 +17,32 @@ def main():
 		answerStartPoint = getAnswerStartPoint(lines, wordsInAnswer)
 
 		cp1 = (wordEndPoint+1,0)
-		cp2 = (len(pixels), answerTop+1)
+		cp2 = (len(pixels), answerTop-1)
 
 		print("Answer height is {}".format(answerTop))
 		print("Word width is {}".format(wordEndPoint))
 		print()
 
-		cp3 = (0, answerBottom-1)
+		cp3 = (0, answerBottom+1)
 		cp4 = (len(pixels[0]), len(pixels))
 
 		cp5 = (0, answerTop)
-		cp6 = (answerStartPoint, answerBottom)
+		cp6 = (answerStartPoint-5, answerBottom+5)
 
 		# modifyImage(path, lines, path+".png")
-		modifyImage(path, cp1,cp2, path+".png")
-		modifyImage(path+".png",cp3,cp4,path+".png.png")
-		modifyImage(path+".png.png",cp5,cp6,path+".png.png.png")
+		modifyImage(path, cp1,cp2, savepath)
+		modifyImage(savepath,cp3,cp4,savepath)
+		modifyImage(savepath,cp5,cp6,savepath)
+
+		pixels = getPixels(savepath)
+		lines = findSignificantHorizontalLines(pixels)
+		firstWordHeight = getFirstWordHeight(lines)
+
+		cp7 = (0,0)
+		cp8 = (wordEndPoint,firstWordHeight - 1)
+
+		modifyImage(savepath,cp7,cp8,savepath)
+
 
 def findSignificantHorizontalLines(pixels, signifcance=0.17):
 	height = len(pixels)
@@ -109,6 +120,9 @@ def getWordEndPoint(lines, answerHeight):
 
 def getAnswerStartPoint(lines,wordsInAnswer):
 	return lines[-wordsInAnswer].start.x
+
+def getFirstWordHeight(lines):
+	return lines[0].start.y;
 
 def modifyImage(path, lines, savepath):
 	image = getImage(path)
