@@ -54,3 +54,34 @@ class Line(object):
             self.xcurr += 1
             return self.xcurr, self.start.y
 
+class CompoundLine(object):
+    def __init__(self):
+        self.lines = []
+
+    def add(self, line):
+        self.lines += [line]
+
+    def __str__(self):
+        strform = "CompoundLine (size {})\n".format(len(self.lines))
+        for line in self.lines:
+            strform += "\t" + str(line) + "\n"
+        return strform
+
+    @property
+    def minY(self):
+        return min([line.start.y for line in self.lines])
+
+    @property
+    def maxY(self):
+        return max([line.start.y for line in self.lines])
+
+    @property
+    def minX(self):
+        return min([line.start.x for line in self.lines])
+
+    @property
+    def maxX(self):
+        return max([line.end.x for line in self.lines])
+    
+    
+

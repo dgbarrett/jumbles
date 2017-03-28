@@ -1,9 +1,9 @@
 import os
 from load import getPixels, getImage
-from ImageStructures import Line, Point
+from ImageStructures import Line, Point, CompoundLine
 
 IMAGES_DIR = "images"
-IMAGE_FILES = ["j1.jpg", "j2.jpg", "j4.jpg"]
+IMAGE_FILES = ["j1.jpg", "j2.jpg", "j3.jpg"]
 IMAGES = [os.path.join(IMAGES_DIR, IMAGE_PATH) for IMAGE_PATH in IMAGE_FILES]
 
 def main():
@@ -18,10 +18,6 @@ def main():
 
 		cp1 = (wordEndPoint+1,0)
 		cp2 = (len(pixels), answerTop-1)
-
-		print("Answer height is {}".format(answerTop))
-		print("Word width is {}".format(wordEndPoint))
-		print()
 
 		cp3 = (0, answerBottom+1)
 		cp4 = (len(pixels[0]), len(pixels))
@@ -43,6 +39,52 @@ def main():
 
 		modifyImage(savepath,cp7,cp8,savepath)
 
+		prevY = lines[0].start.y
+		count = 0
+		lastnew = False
+		compoundLines = []
+		currCompoundLine = CompoundLine()
+		currCompoundLine.add(lines[0])
+
+		for line in lines[1:]:
+			dif = line.start.y - prevY
+			if dif not in range(0,8):
+				count += 1
+				lastnew = True
+				compoundLines += [currCompoundLine]
+				currCompoundLine = CompoundLine()
+			else:
+				currCompoundLine.add(line)
+				lastnew = False
+
+			prevY = line.start.y
+
+		if not lastnew:
+			count +=1
+			compoundLines += [currCompoundLine]
+
+		crops = getWordRegions(compoundLines)
+
+		for crop in crops:
+			modifyImage(savepath,crop[0],crop[1],savepath)
+
+
+def getWordRegions(compoundLines):
+	# Last two horizontal lines define the answer
+	clines = compoundLines[:-2]
+	crops = []
+	cp1 = None
+	cp2 = None 
+
+	for i,line in enumerate(clines[::3]):
+		nextline = clines[(i*3)+1]
+
+		cp1 = (line.minX + 10, line.maxY + 1)
+		cp2 = (line.maxX - 10, nextline.minY - 1)
+
+		crops.append( [cp1,cp2] )
+
+	return crops
 
 def findSignificantHorizontalLines(pixels, signifcance=0.17):
 	height = len(pixels)
