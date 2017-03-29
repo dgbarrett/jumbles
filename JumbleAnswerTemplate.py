@@ -10,7 +10,7 @@ class JumbleAnswerTemplate(object):
 			for line in lines[1:]:
 				row = [float(s) for s in line.split('\t')]
 
-				if row[5] <= 1.05:
+				if row[5] <= 1.09:
 					datarows.append(row)
 
 		# sizes = sorted([row[1] for row in datarows])
@@ -30,6 +30,12 @@ class JumbleAnswerTemplate(object):
 			else:
 				wordStartTemplate.append(False)
 			prevY = row[3]
+
+		currY = 0
+		for wordstart, row in zip(wordStartTemplate, datarows):
+			if wordstart:
+				currY = int(row[3])
+			row[3] = currY
 
 		templist = None
 		wordLists = []

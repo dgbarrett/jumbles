@@ -29,7 +29,7 @@ def isMatchFor(jumble, word):
 	return ''.join(sorted(jumble)) == ''.join(sorted(word))
 
 def createFinalAnswerTemplate(wordsets):
-	template = JumbleAnswerTemplate("data/j2_cropped.xls")
+	template = JumbleAnswerTemplate("data/j3_cropped.xls")
 
 	for i, dictentry in enumerate(wordsets.items()):
 		string = dictentry[0]
@@ -42,7 +42,7 @@ def createFinalAnswerTemplate(wordsets):
 		print(templ.answer)
 		print(templ.getSpecialLetters())
 
-for i in [1,2,3,4,5,6,7,8,9,10][1:2]:
+for i in [1,2,3,4,5,6,7,8,9,10][2:3]:
 	wordset = getUnJumbledWords("images/j{}.png".format(i))
 	createFinalAnswerTemplate(wordset)
 
