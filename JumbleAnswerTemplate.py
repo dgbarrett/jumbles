@@ -12,7 +12,18 @@ class JumbleAnswerTemplate(object):
 				if row[5] <= 1.05:
 					datarows.append(row)
 
-		answerLetterMap = [ isAnswerLetter(row[4]) for row in datarows ]
+		# sizes = sorted([row[1] for row in datarows])
+		# maxdifIndex = getMaxDifIndex(sizes)
+		# thresholdValue = (sizes[maxdifIndex] + sizes[maxdifIndex+1])/2
+
+		# circs = sorted([row[4] for row in datarows])
+		# maxdifIndex = getMaxDifIndex(circs)
+		# circThreshold = (circs[maxdifIndex] + circs[maxdifIndex+1])/2
+
+		answerLetterMap = [ isAnswerLetter(row[7]) for row in datarows ]
+
+		for row, let in zip(datarows,answerLetterMap):
+			print(let, row)
 		
 		wordStartTemplate = [True]
 		prevY = datarows[0][3]
@@ -34,9 +45,6 @@ class JumbleAnswerTemplate(object):
 
 			ansTemplate.addLetter(isAnsLetter)
 		self.clueAnswerTemplates.append(ansTemplate)
-
-		for a,b in zip(answerLetterMap, datarows):
-			print(a,b)
 
 class TemplateWord(object):
 	def __init__(self):
@@ -63,6 +71,23 @@ class TemplateWord(object):
 		return len(self.specialLetters)
 
 
-def isAnswerLetter(circularity):
-	return circularity >= 0.89 and circularity <= 0.94
+def isAnswerLetter(solidity):
+	return not math.isclose(solidity, 1.00)
+
+def getMaxDifIndex(sizes):
+	maxdif = 0;
+	currval = sizes[0]
+	index = 0;
+
+	for i,size in enumerate(sizes[1:]):
+		dif = size - currval
+
+		if dif > maxdif:
+			index = i
+			maxdif = dif
+
+		currval = size
+
+	return index
+
 

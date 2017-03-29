@@ -1,11 +1,11 @@
-var IMG_NAME = "j4_cropped"
+var IMG_NAME = "j2_cropped"
 var IMG_PATH = "images/" + IMG_NAME + ".png"
 
 // Absolute path required for some reason
 var OUT_PATH = "/Users/damon/Documents/coding/repos/cis4720/jumbles/";
 var OUT_FILE = "data/" + IMG_NAME + ".xls"
 
-var delta = 7.19;
+var delta = 9.9;
 var minArea = (delta*delta) * 3.1415;
 
 open(IMG_PATH)

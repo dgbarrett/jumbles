@@ -42,7 +42,7 @@ def createFinalAnswerTemplate(wordsets):
 		print(templ.answer)
 		print(templ.getSpecialLetters())
 
-for i in [1,2,3,4,5,6,7,8,9,10][2:3]:
+for i in [1,2,3,4,5,6,7,8,9,10][1:2]:
 	wordset = getUnJumbledWords("images/j{}.png".format(i))
 	createFinalAnswerTemplate(wordset)
 
