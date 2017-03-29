@@ -11,10 +11,10 @@ def getPixels(path):
     for i in range(height):
         row = []
         for j in range(width):
-            if (pixeldata[j,i] == (255,255,255)):
-                row += [0]
-            else:
+            if (pixeldata[j,i] == 255):
                 row += [1]
+            else:
+                row += [0]
         pixels += [row]
 
     return pixels

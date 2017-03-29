@@ -2,73 +2,99 @@ import os
 from load import getPixels, getImage
 from ImageStructures import Line, Point, CompoundLine
 
-IMAGES_DIR = "images"
-IMAGE_FILES = ["j1.jpg", "j2.jpg", "j3.jpg"]
-IMAGES = [os.path.join(IMAGES_DIR, IMAGE_PATH) for IMAGE_PATH in IMAGE_FILES]
+def extractWordClues(path):
+	savepath = path.split(".")[0] + "_cropped.png"
 
-def main():
-	for path in IMAGES:
-		savepath = path.split(".")[0] + ".png"
-		pixels = getPixels(path)
-		lines = findSignificantHorizontalLines(pixels)
-		wordsInAnswer = getNumberOfWordsInAnswer(lines)
-		answerTop, answerBottom = getAnswerHeight(lines, wordsInAnswer)
-		wordEndPoint = getWordEndPoint(lines, answerTop)
-		answerStartPoint = getAnswerStartPoint(lines, wordsInAnswer)
+	# Get image pixels and size.
+	pixels = getPixels(path)
+	height = len(pixels)
+	width = len(pixels[0])
 
-		cp1 = (wordEndPoint+1,0)
-		cp2 = (len(pixels), answerTop-1)
+	lines = findSignificantHorizontalLines(pixels)
 
-		cp3 = (0, answerBottom+1)
-		cp4 = (len(pixels[0]), len(pixels))
+	# The number of words in the answer
+	wordsInAnswer = getNumberOfWordsInAnswer(lines)
+	# answerTop is the y position of the top of the answer area
+	# answerTop is the y position of the bottom of the answer area
+	answerTop, answerBottom = getAnswerHeight(lines, wordsInAnswer)
+	# Get the x position where the clues end.
+	clueEndPoint = getWordEndPoint(lines, answerTop)
+	# Get leftmost x position of the answer entry.
+	answerStartPoint = getAnswerStartPoint(lines, wordsInAnswer)
 
-		cp5 = (0, answerTop)
-		cp6 = (answerStartPoint-5, answerBottom+5)
+	# Top edge of the image in line with where the clues end.
+	croppoint1 = (clueEndPoint + 1, 0)
+	# Point right above the answer, all the way to the right side of the image.
+	croppoint2 = (width, answerTop - 1)
+	# Crop the comic and associated text out.
+	cropImage(path, croppoint1, croppoint2, savepath)
 
-		# modifyImage(path, lines, path+".png")
-		modifyImage(path, cp1,cp2, savepath)
-		modifyImage(savepath,cp3,cp4,savepath)
-		modifyImage(savepath,cp5,cp6,savepath)
+	# Left edge of image right below answer.
+	croppoint3 = (0, answerBottom + 1)
+	# Bottom right corner of image.
+	croppoint4 = (width, height)
+	# Crop nonsense below the answer entry.
+	cropImage(savepath, croppoint3, croppoint4)
 
-		pixels = getPixels(savepath)
-		lines = findSignificantHorizontalLines(pixels)
-		firstWordHeight = getFirstWordHeight(lines)
+	# # Left edge of image, in line with top of answer entry.
+	# croppoint5 = (0, answerTop)
+	# # Point just to the left of the bottom left corner of the answer entry.
+	# croppoint6 = (answerStartPoint - 5, answerBottom + 5)
+	# # Crop answer title (to left of answer entry).
+	# cropImage(savepath, croppoint5, croppoint6)
 
-		cp7 = (0,0)
-		cp8 = (wordEndPoint,firstWordHeight - 1)
+	# Now that image is cleaned up, we re-find the sig horizontal lines incase there was error before.
+	pixels = getPixels(savepath)
+	lines = findSignificantHorizontalLines(pixels)
+	# Y position of the top of the first clue.
+	firstWordHeight = getFirstWordHeight(lines)
 
-		modifyImage(savepath,cp7,cp8,savepath)
+	croppoint7 = (0,0)
+	croppoint8 = (clueEndPoint, firstWordHeight - 1)
+	# Crop out area above first clue.
+	cropImage(savepath, croppoint7, croppoint8)
 
-		prevY = lines[0].start.y
-		count = 0
-		lastnew = False
-		compoundLines = []
-		currCompoundLine = CompoundLine()
-		currCompoundLine.add(lines[0])
+	compoundLines = buildCompoundLines(lines)
 
-		for line in lines[1:]:
-			dif = line.start.y - prevY
-			if dif not in range(0,8):
-				count += 1
-				lastnew = True
-				compoundLines += [currCompoundLine]
-				currCompoundLine = CompoundLine()
-			else:
-				currCompoundLine.add(line)
-				lastnew = False
+	delta = (0.6 * (compoundLines[1].minY - compoundLines[0].maxY))/2
 
-			prevY = line.start.y
+	textCropPoints = getWordRegions(compoundLines)
 
-		if not lastnew:
-			count +=1
+	wordImages = []
+	name = path.split(".")[0]
+	for i, cropPointPair in enumerate(textCropPoints):
+		savepath = "{}_word{}.png".format(name, i)
+		wordImages.append(savepath)
+		extractImageArea(path, cropPointPair[0], cropPointPair[1], savepath)
+
+	return wordImages, delta
+
+def buildCompoundLines(lines):
+	prevY = lines[0].start.y
+	count = 0
+	lastnew = False
+	compoundLines = []
+	currCompoundLine = CompoundLine()
+	currCompoundLine.add(lines[0])
+
+	for line in lines[1:]:
+		dif = line.start.y - prevY
+		if dif not in range(0,8):
+			count += 1
+			lastnew = True
 			compoundLines += [currCompoundLine]
+			currCompoundLine = CompoundLine()
+		else:
+			currCompoundLine.add(line)
+			lastnew = False
 
-		crops = getWordRegions(compoundLines)
+		prevY = line.start.y
 
-		for i,crop in enumerate(crops):
-			name = savepath.split(".")[0]
-			name += "_" + str(i) + ".png"
-			cropOutImageArea(path,crop[0],crop[1],name)
+	if not lastnew:
+		count +=1
+		compoundLines += [currCompoundLine]
+
+	return compoundLines
 
 
 def getWordRegions(compoundLines):
@@ -88,7 +114,7 @@ def getWordRegions(compoundLines):
 
 	return crops
 
-def findSignificantHorizontalLines(pixels, signifcance=0.17):
+def findSignificantHorizontalLines(pixels, signifcance=0.10):
 	height = len(pixels)
 	width = len(pixels[0])
 
@@ -102,6 +128,7 @@ def findSignificantHorizontalLines(pixels, signifcance=0.17):
 
 				if line.magnitude >= signifcance*width:
 					lines += [line]
+
 				line = None
 			elif not line and pixel:
 				line = Line( Point(x,y) )
@@ -168,17 +195,7 @@ def getAnswerStartPoint(lines,wordsInAnswer):
 def getFirstWordHeight(lines):
 	return lines[0].start.y;
 
-def modifyImageL(path, lines, savepath):
-	image = getImage(path)
-	imgpx = image.load()
-
-	for line in lines:
-		for x,y in line:
-			imgpx[x,y] = (255,255,255)
-
-	image.save(savepath)
-
-def cropOutImageArea(path, cp1, cp2, savepath):
+def extractImageArea(path, cp1, cp2, savepath):
 	im = getImage(path)
 	width = im.size[0]
 	height = im.size[1]
@@ -187,12 +204,14 @@ def cropOutImageArea(path, cp1, cp2, savepath):
 	for i in range(height):
 		for j in range(width):
 			if j not in range(cp1[0],cp2[0]) or i not in range(cp1[1],cp2[1]):
-				pixeldata[j,i] = (255,255,255)
+				pixeldata[j,i] = 0
 
 	im.save(savepath)
 
+def cropImage(path, cp1,cp2, savepath=None):
+	if not savepath:
+		savepath = path
 
-def modifyImage(path, cp1,cp2, savepath):
 	im = getImage(path)
 	width = im.size[0]
 	height = im.size[1]
@@ -201,9 +220,6 @@ def modifyImage(path, cp1,cp2, savepath):
 	for i in range(height):
 		for j in range(width):
 			if j in range(cp1[0],cp2[0]) and i in range(cp1[1],cp2[1]):
-				pixeldata[j,i] = (255,255,255)
+				pixeldata[j,i] = 0
 
 	im.save(savepath)
-
-if __name__ == "__main__":
-	main()
