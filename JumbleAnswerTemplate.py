@@ -1,4 +1,5 @@
 import math
+import operator
 
 class JumbleAnswerTemplate(object):
 	def __init__(self, path):
@@ -20,11 +21,7 @@ class JumbleAnswerTemplate(object):
 		# maxdifIndex = getMaxDifIndex(circs)
 		# circThreshold = (circs[maxdifIndex] + circs[maxdifIndex+1])/2
 
-		answerLetterMap = [ isAnswerLetter(row[7]) for row in datarows ]
-
-		for row, let in zip(datarows,answerLetterMap):
-			print(let, row)
-		
+		#find the start of the words
 		wordStartTemplate = [True]
 		prevY = datarows[0][3]
 		for row in datarows[1:]:
@@ -33,6 +30,37 @@ class JumbleAnswerTemplate(object):
 			else:
 				wordStartTemplate.append(False)
 			prevY = row[3]
+
+		templist = None
+		wordLists = []
+		for row, newword in zip(datarows, wordStartTemplate):
+			if newword:
+				if templist:
+					wordLists.append(templist)
+				
+				templist = []
+			templist.append(row)
+
+		if templist:
+			wordLists.append(templist)
+
+		datarows = []
+		for lis in wordLists:
+			lis = sorted(lis, key=lambda x:x[2])
+			datarows += lis
+
+		answerLetterMap = [ isAnswerLetter(row[7]) for row in datarows ]
+
+		wordStartTemplate = [True]
+		prevY = datarows[0][3]
+		for row in datarows[1:]:
+			if math.fabs(prevY - row[3]) > 1:
+				wordStartTemplate.append(True)
+			else:
+				wordStartTemplate.append(False)
+			prevY = row[3]
+
+		
 
 		ansTemplate = None
 		self.clueAnswerTemplates = []
