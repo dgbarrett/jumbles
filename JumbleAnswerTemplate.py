@@ -66,8 +66,6 @@ class JumbleAnswerTemplate(object):
 				wordStartTemplate.append(False)
 			prevY = row[3]
 
-		
-
 		ansTemplate = None
 		self.clueAnswerTemplates = []
 		for isAnsLetter, wordStart, data in zip(answerLetterMap, wordStartTemplate, datarows):
@@ -79,6 +77,24 @@ class JumbleAnswerTemplate(object):
 
 			ansTemplate.addLetter(isAnsLetter)
 		self.clueAnswerTemplates.append(ansTemplate)
+
+	def getAnswerLetters(self):
+		letters = ""
+		for template in self.clueAnswerTemplates:
+			letters += template.getSpecialLetters()
+
+		return letters
+
+	def addAnswer(self, index, answer):
+		self.clueAnswerTemplates[index].answer = answer
+
+	def getAnswerFormat(self):
+		answerWordLens = []
+		for template in self.clueAnswerTemplates:
+			if template.isAnswerTemplate():
+				answerWordLens.append(len(template))
+
+		return answerWordLens
 
 class TemplateWord(object):
 	def __init__(self):
@@ -95,18 +111,27 @@ class TemplateWord(object):
 		ans = list(self.answer)
 		special = ""
 
-		if len(ans) > 0:
-			for i, isSpecialLetter in enumerate(self.specialLetters):
-				if isSpecialLetter and len(ans) > i:
-					special += ans[i]
-		return special	
+		for letter, isSpecial in zip(ans, self.specialLetters):
+			if isSpecial:
+				special += letter
+
+		return special
+
+	def isAnswerTemplate(self):
+		return sum(self.specialLetters) == len(self);
 
 	def __len__(self):
 		return len(self.specialLetters)
 
+	def __str__(self):
+		st = ""
+		for letter in self.specialLetters:
+			st += str(letter) + " "
+
+		return st
 
 def isAnswerLetter(solidity):
-	return not math.isclose(solidity, 1.00)
+	return int(not math.isclose(solidity, 1.00))
 
 def getMaxDifIndex(sizes):
 	maxdif = 0;

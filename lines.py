@@ -82,6 +82,3 @@ class CompoundLine(object):
     @property
     def maxX(self):
         return max([line.end.x for line in self.lines])
-    
-    
-
