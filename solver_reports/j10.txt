@@ -1,0 +1,147 @@
+Starting STEP 2A (template generation) for "j10.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j10.png".
+	OCR detected ['bomlo', 'fsifn', 'dodohe', 'ovlrte']
+	Done.
+Starting STEP 3 (solving) for "j10.png"
+	Extracted 4 clue strings from j10.png.
+		1. bomlo
+		2. fsifn
+		3. dodohe
+		4. ovlrte
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		bomlo
+			- bloom
+		fsifn
+			- sniff
+		dodohe
+			- hooded
+		ovlrte
+			- revolt
+	Extracting answer information.
+		Answer must be 10 total letters.
+		Answer must be 2 words.
+			 word 1 : 5 letters.
+			 word 2 : 5 letters.
+		Answer must consist of "bmsnoodreo"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: bosom drone 
+			POSSIBLE SOLUTION: bosom doren 
+			POSSIBLE SOLUTION: bosom ronde 
+			POSSIBLE SOLUTION: bosom roden 
+			POSSIBLE SOLUTION: bosom endor 
+			POSSIBLE SOLUTION: bosom onder 
+			POSSIBLE SOLUTION: bosom orden 
+			POSSIBLE SOLUTION: bonds moore 
+			POSSIBLE SOLUTION: bonds romeo 
+			POSSIBLE SOLUTION: bonds roome 
+			POSSIBLE SOLUTION: bones moord 
+			POSSIBLE SOLUTION: bones droom 
+			POSSIBLE SOLUTION: boned moros 
+			POSSIBLE SOLUTION: boned moors 
+			POSSIBLE SOLUTION: boned rooms 
+			POSSIBLE SOLUTION: booms drone 
+			POSSIBLE SOLUTION: booms doren 
+			POSSIBLE SOLUTION: booms ronde 
+			POSSIBLE SOLUTION: booms roden 
+			POSSIBLE SOLUTION: booms endor 
+			POSSIBLE SOLUTION: booms onder 
+			POSSIBLE SOLUTION: booms orden 
+			POSSIBLE SOLUTION: boons moder 
+			POSSIBLE SOLUTION: boors monde 
+			POSSIBLE SOLUTION: boors demon 
+			POSSIBLE SOLUTION: boord menos 
+			POSSIBLE SOLUTION: boord omnes 
+			POSSIBLE SOLUTION: boord omens 
+			POSSIBLE SOLUTION: bodem orson 
+			POSSIBLE SOLUTION: bodes monro 
+			POSSIBLE SOLUTION: boden moros 
+			POSSIBLE SOLUTION: boden moors 
+			POSSIBLE SOLUTION: boden rooms 
+			POSSIBLE SOLUTION: borne moods 
+			POSSIBLE SOLUTION: borne sodom 
+			POSSIBLE SOLUTION: borne dooms 
+			POSSIBLE SOLUTION: bords moone 
+			POSSIBLE SOLUTION: borde moons 
+			POSSIBLE SOLUTION: bores mondo 
+			POSSIBLE SOLUTION: bored moons 
+			POSSIBLE SOLUTION: boers mondo 
+			POSSIBLE SOLUTION: broom nosed 
+			POSSIBLE SOLUTION: brood menos 
+			POSSIBLE SOLUTION: brood omnes 
+			POSSIBLE SOLUTION: brood omens 
+			POSSIBLE SOLUTION: besom donor 
+			POSSIBLE SOLUTION: beorn moods 
+			POSSIBLE SOLUTION: beorn sodom 
+			POSSIBLE SOLUTION: beorn dooms 
+			POSSIBLE SOLUTION: mondo bores 
+			POSSIBLE SOLUTION: mondo boers 
+			POSSIBLE SOLUTION: mondo sobre 
+			POSSIBLE SOLUTION: mondo sober 
+			POSSIBLE SOLUTION: mondo robes 
+			POSSIBLE SOLUTION: monde boors 
+			POSSIBLE SOLUTION: monro bodes 
+			POSSIBLE SOLUTION: moons borde 
+			POSSIBLE SOLUTION: moons bored 
+			POSSIBLE SOLUTION: moons robed 
+			POSSIBLE SOLUTION: moone bords 
+			POSSIBLE SOLUTION: moods beorn 
+			POSSIBLE SOLUTION: moods borne 
+			POSSIBLE SOLUTION: moods obern 
+			POSSIBLE SOLUTION: moors boned 
+			POSSIBLE SOLUTION: moors boden 
+			POSSIBLE SOLUTION: moord bones 
+			POSSIBLE SOLUTION: moore bonds 
+			POSSIBLE SOLUTION: moder boons 
+			POSSIBLE SOLUTION: moros boned 
+			POSSIBLE SOLUTION: moros boden 
+			POSSIBLE SOLUTION: menos boord 
+			POSSIBLE SOLUTION: menos brood 
+			POSSIBLE SOLUTION: sobre mondo 
+			POSSIBLE SOLUTION: sober mondo 
+			POSSIBLE SOLUTION: sodom beorn 
+			POSSIBLE SOLUTION: sodom borne 
+			POSSIBLE SOLUTION: sodom obern 
+			POSSIBLE SOLUTION: nosed broom 
+			POSSIBLE SOLUTION: obern moods 
+			POSSIBLE SOLUTION: obern sodom 
+			POSSIBLE SOLUTION: obern dooms 
+			POSSIBLE SOLUTION: omnes boord 
+			POSSIBLE SOLUTION: omnes brood 
+			POSSIBLE SOLUTION: omens boord 
+			POSSIBLE SOLUTION: omens brood 
+			POSSIBLE SOLUTION: onder bosom 
+			POSSIBLE SOLUTION: onder booms 
+			POSSIBLE SOLUTION: orson bodem 
+			POSSIBLE SOLUTION: orden bosom 
+			POSSIBLE SOLUTION: orden booms 
+			POSSIBLE SOLUTION: donor besom 
+			POSSIBLE SOLUTION: dooms beorn 
+			POSSIBLE SOLUTION: dooms borne 
+			POSSIBLE SOLUTION: dooms obern 
+			POSSIBLE SOLUTION: doren bosom 
+			POSSIBLE SOLUTION: doren booms 
+			POSSIBLE SOLUTION: drone bosom 
+			POSSIBLE SOLUTION: drone booms 
+			POSSIBLE SOLUTION: droom bones 
+			POSSIBLE SOLUTION: demon boors 
+			POSSIBLE SOLUTION: robes mondo 
+			POSSIBLE SOLUTION: robed moons 
+			POSSIBLE SOLUTION: romeo bonds 
+			POSSIBLE SOLUTION: ronde bosom 
+			POSSIBLE SOLUTION: ronde booms 
+			POSSIBLE SOLUTION: rooms boned 
+			POSSIBLE SOLUTION: rooms boden 
+			POSSIBLE SOLUTION: roome bonds 
+			POSSIBLE SOLUTION: roden bosom 
+			POSSIBLE SOLUTION: roden booms 
+			POSSIBLE SOLUTION: endor bosom 
+			POSSIBLE SOLUTION: endor booms 
+Found 112 total possible solutions.
+
+Time taken: 4.66649603843689s

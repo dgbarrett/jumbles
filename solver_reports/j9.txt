@@ -1,0 +1,36 @@
+Starting STEP 2A (template generation) for "j9.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j9.png".
+	OCR detected ['banic', 'ogame', 'tanedt', 'tadrsn']
+	Done.
+Starting STEP 3 (solving) for "j9.png"
+	Extracted 4 clue strings from j9.png.
+		1. banic
+		2. ogame
+		3. tanedt
+		4. tadrsn
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		banic
+			- cabin
+		ogame
+			- omega
+		tanedt
+			- attend
+		tadrsn
+			- strand
+	Extracting answer information.
+		Answer must be 8 total letters.
+		Answer must be 1 words.
+			 word 1 : 8 letters.
+		Answer must consist of "ainogtsr"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: organist 
+			POSSIBLE SOLUTION: roasting 
+Found 2 total possible solutions.
+
+Time taken: 2.368196725845337s

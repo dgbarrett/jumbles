@@ -1,4 +1,4 @@
-from load import getImage
+from code.pycode.load import getImage
 
 def extractImageArea(path, cp1, cp2, savepath):
 	im = getImage(path)

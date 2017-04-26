@@ -1,4 +1,4 @@
-from lines import Point, Line, CompoundLine
+from code.pycode.lines import Point, Line, CompoundLine
 
 ''' 
 	Function: findSingificantHorizontalLines

@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Background}{3}
+\contentsline {section}{\numberline {2}Algorithm}{3}
+\contentsline {subsection}{\numberline {2.1}Input image cropping}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Significant Horizontal Line Detection}{4}
+\contentsline {subsection}{\numberline {2.2}Jumble feature extraction}{5}
+\contentsline {subsubsection}{\numberline {2.2.1}Particle Analysis}{5}
+\contentsline {subsubsection}{\numberline {2.2.2}Clue string extraction}{6}
+\contentsline {subsection}{\numberline {2.3}Solving}{8}
+\contentsline {subsubsection}{\numberline {2.3.1}Solving the clue anagrams}{8}
+\contentsline {subsubsection}{\numberline {2.3.2}Extraction of the final anagram}{8}
+\contentsline {subsubsection}{\numberline {2.3.3}Final answer format deduction}{8}
+\contentsline {subsubsection}{\numberline {2.3.4}Final anagram solving}{8}
+\contentsline {paragraph}{Dictionary structure}{9}
+\contentsline {paragraph}{Permutation cache}{9}
+\contentsline {section}{\numberline {3}Results}{9}
+\contentsline {subsection}{\numberline {3.1}Clue segmentation and recognition}{10}
+\contentsline {subsection}{\numberline {3.2}Clue solving}{10}
+\contentsline {subsection}{\numberline {3.3}Final anagram extraction}{10}
+\contentsline {subsection}{\numberline {3.4}Answer format deduction}{10}
+\contentsline {subsection}{\numberline {3.5}Final anagram solution}{10}
+\contentsline {section}{\numberline {4}Discussion}{12}
+\contentsline {section}{\numberline {5}Conclusion}{13}

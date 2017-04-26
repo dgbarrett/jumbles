@@ -19,6 +19,9 @@ def getPixels(path):
 
     return pixels
 
+def getRawPixels(path):
+    return Image.open(path)
+
 def getImage(path):
     return Image.open(path)
 

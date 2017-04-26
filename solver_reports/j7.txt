@@ -1,0 +1,163 @@
+Starting STEP 2A (template generation) for "j7.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j7.png".
+	OCR detected ['sysag', 'ikkah', 'nopett', 'naanab']
+	Done.
+Starting STEP 3 (solving) for "j7.png"
+	Extracted 4 clue strings from j7.png.
+		1. sysag
+		2. ikkah
+		3. nopett
+		4. naanab
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		sysag
+			- gassy
+		ikkah
+			- khaki
+		nopett
+			- potent
+		naanab
+			- banana
+	Extracting answer information.
+		Answer must be 4 total letters.
+		Answer must be 1 words.
+			 word 1 : 4 letters.
+		Answer must consist of "ghiotnn"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: gino 
+			POSSIBLE SOLUTION: gino 
+			POSSIBLE SOLUTION: gino 
+			POSSIBLE SOLUTION: gino 
+			POSSIBLE SOLUTION: gino 
+			POSSIBLE SOLUTION: gino 
+			POSSIBLE SOLUTION: ginn 
+			POSSIBLE SOLUTION: ginn 
+			POSSIBLE SOLUTION: ginn 
+			POSSIBLE SOLUTION: ginn 
+			POSSIBLE SOLUTION: ginn 
+			POSSIBLE SOLUTION: ginn 
+			POSSIBLE SOLUTION: goin 
+			POSSIBLE SOLUTION: goin 
+			POSSIBLE SOLUTION: goin 
+			POSSIBLE SOLUTION: goin 
+			POSSIBLE SOLUTION: goin 
+			POSSIBLE SOLUTION: goin 
+			POSSIBLE SOLUTION: goth 
+			POSSIBLE SOLUTION: goth 
+			POSSIBLE SOLUTION: goth 
+			POSSIBLE SOLUTION: hing 
+			POSSIBLE SOLUTION: hing 
+			POSSIBLE SOLUTION: hing 
+			POSSIBLE SOLUTION: hing 
+			POSSIBLE SOLUTION: hing 
+			POSSIBLE SOLUTION: hing 
+			POSSIBLE SOLUTION: hint 
+			POSSIBLE SOLUTION: hint 
+			POSSIBLE SOLUTION: hint 
+			POSSIBLE SOLUTION: hint 
+			POSSIBLE SOLUTION: hint 
+			POSSIBLE SOLUTION: hint 
+			POSSIBLE SOLUTION: hong 
+			POSSIBLE SOLUTION: hong 
+			POSSIBLE SOLUTION: hong 
+			POSSIBLE SOLUTION: hong 
+			POSSIBLE SOLUTION: hong 
+			POSSIBLE SOLUTION: hong 
+			POSSIBLE SOLUTION: iohn 
+			POSSIBLE SOLUTION: iohn 
+			POSSIBLE SOLUTION: iohn 
+			POSSIBLE SOLUTION: iohn 
+			POSSIBLE SOLUTION: iohn 
+			POSSIBLE SOLUTION: iohn 
+			POSSIBLE SOLUTION: into 
+			POSSIBLE SOLUTION: into 
+			POSSIBLE SOLUTION: into 
+			POSSIBLE SOLUTION: into 
+			POSSIBLE SOLUTION: into 
+			POSSIBLE SOLUTION: into 
+			POSSIBLE SOLUTION: ogni 
+			POSSIBLE SOLUTION: ogni 
+			POSSIBLE SOLUTION: ogni 
+			POSSIBLE SOLUTION: ogni 
+			POSSIBLE SOLUTION: ogni 
+			POSSIBLE SOLUTION: ogni 
+			POSSIBLE SOLUTION: onni 
+			POSSIBLE SOLUTION: onni 
+			POSSIBLE SOLUTION: onni 
+			POSSIBLE SOLUTION: onni 
+			POSSIBLE SOLUTION: onni 
+			POSSIBLE SOLUTION: onni 
+			POSSIBLE SOLUTION: thin 
+			POSSIBLE SOLUTION: thin 
+			POSSIBLE SOLUTION: thin 
+			POSSIBLE SOLUTION: thin 
+			POSSIBLE SOLUTION: thin 
+			POSSIBLE SOLUTION: thin 
+			POSSIBLE SOLUTION: tion 
+			POSSIBLE SOLUTION: tion 
+			POSSIBLE SOLUTION: tion 
+			POSSIBLE SOLUTION: tion 
+			POSSIBLE SOLUTION: tion 
+			POSSIBLE SOLUTION: tion 
+			POSSIBLE SOLUTION: ting 
+			POSSIBLE SOLUTION: ting 
+			POSSIBLE SOLUTION: ting 
+			POSSIBLE SOLUTION: ting 
+			POSSIBLE SOLUTION: ting 
+			POSSIBLE SOLUTION: ting 
+			POSSIBLE SOLUTION: tong 
+			POSSIBLE SOLUTION: tong 
+			POSSIBLE SOLUTION: tong 
+			POSSIBLE SOLUTION: tong 
+			POSSIBLE SOLUTION: tong 
+			POSSIBLE SOLUTION: tong 
+			POSSIBLE SOLUTION: toni 
+			POSSIBLE SOLUTION: toni 
+			POSSIBLE SOLUTION: toni 
+			POSSIBLE SOLUTION: toni 
+			POSSIBLE SOLUTION: toni 
+			POSSIBLE SOLUTION: toni 
+			POSSIBLE SOLUTION: ngot 
+			POSSIBLE SOLUTION: ngot 
+			POSSIBLE SOLUTION: ngot 
+			POSSIBLE SOLUTION: ngot 
+			POSSIBLE SOLUTION: ngot 
+			POSSIBLE SOLUTION: ngot 
+			POSSIBLE SOLUTION: ngon 
+			POSSIBLE SOLUTION: ngon 
+			POSSIBLE SOLUTION: ngon 
+			POSSIBLE SOLUTION: ngon 
+			POSSIBLE SOLUTION: ngon 
+			POSSIBLE SOLUTION: ngon 
+			POSSIBLE SOLUTION: nigh 
+			POSSIBLE SOLUTION: nigh 
+			POSSIBLE SOLUTION: nigh 
+			POSSIBLE SOLUTION: nigh 
+			POSSIBLE SOLUTION: nigh 
+			POSSIBLE SOLUTION: nigh 
+			POSSIBLE SOLUTION: nino 
+			POSSIBLE SOLUTION: nino 
+			POSSIBLE SOLUTION: nino 
+			POSSIBLE SOLUTION: nino 
+			POSSIBLE SOLUTION: nino 
+			POSSIBLE SOLUTION: nino 
+			POSSIBLE SOLUTION: noin 
+			POSSIBLE SOLUTION: noin 
+			POSSIBLE SOLUTION: noin 
+			POSSIBLE SOLUTION: noin 
+			POSSIBLE SOLUTION: noin 
+			POSSIBLE SOLUTION: noin 
+			POSSIBLE SOLUTION: noth 
+			POSSIBLE SOLUTION: noth 
+			POSSIBLE SOLUTION: noth 
+			POSSIBLE SOLUTION: noth 
+			POSSIBLE SOLUTION: noth 
+			POSSIBLE SOLUTION: noth 
+Found 129 total possible solutions.
+
+Time taken: 1.504789113998413s

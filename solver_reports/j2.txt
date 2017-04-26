@@ -1,0 +1,36 @@
+Starting STEP 2A (template generation) for "j2.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j2.png".
+	OCR detected ['knbir', 'tlorl', 'onnted', 'aspude']
+	Done.
+Starting STEP 3 (solving) for "j2.png"
+	Extracted 4 clue strings from j2.png.
+		1. knbir
+		2. tlorl
+		3. onnted
+		4. aspude
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		knbir
+			- brink
+		tlorl
+			- troll
+		onnted
+			- tendon
+			- denton
+		aspude
+			- paused
+	Extracting answer information.
+		Answer must be 13 total letters.
+		Answer must be 2 words.
+			 word 1 : 6 letters.
+			 word 2 : 7 letters.
+		Answer must consist of "rintrltenpase"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: ripest lantern 
+
+- TERMINATED WITHOUT COMPLETION, TOO DIFFICULT TO COMPLETE -

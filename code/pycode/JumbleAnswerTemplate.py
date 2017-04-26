@@ -88,13 +88,8 @@ class JumbleAnswerTemplate(object):
 	def addAnswer(self, index, answer):
 		self.clueAnswerTemplates[index].answer = answer
 
-	def getAnswerFormat(self):
-		answerWordLens = []
-		for template in self.clueAnswerTemplates:
-			if template.isAnswerTemplate():
-				answerWordLens.append(len(template))
-
-		return answerWordLens
+	def getTotalAnswerLength(self):
+		return len(self.clueAnswerTemplates[-1])
 
 class TemplateWord(object):
 	def __init__(self):

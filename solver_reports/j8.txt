@@ -1,0 +1,81 @@
+Starting STEP 2A (template generation) for "j8.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j8.png".
+	OCR detected ['neaxn', 'ridyt', 'grelyc', 'ezesne']
+	Done.
+Starting STEP 3 (solving) for "j8.png"
+	Extracted 4 clue strings from j8.png.
+		1. neaxn
+		2. ridyt
+		3. grelyc
+		4. ezesne
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		neaxn
+			- annex
+		ridyt
+			- dirty
+		grelyc
+			- clergy
+		ezesne
+			- sneeze
+	Extracting answer information.
+		Answer must be 7 total letters.
+		Answer must be 2 words.
+			 word 1 : 3 letters.
+			 word 2 : 4 letters.
+		Answer must consist of "edyers"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: eye drs 
+			POSSIBLE SOLUTION: eer yds 
+			POSSIBLE SOLUTION: ees dry 
+			POSSIBLE SOLUTION: ere yds 
+			POSSIBLE SOLUTION: ese dry 
+			POSSIBLE SOLUTION: dey res 
+			POSSIBLE SOLUTION: dey ser 
+			POSSIBLE SOLUTION: dee yrs 
+			POSSIBLE SOLUTION: dee syr 
+			POSSIBLE SOLUTION: der yes 
+			POSSIBLE SOLUTION: der sey 
+			POSSIBLE SOLUTION: des yer 
+			POSSIBLE SOLUTION: des rye 
+			POSSIBLE SOLUTION: des rey 
+			POSSIBLE SOLUTION: dye res 
+			POSSIBLE SOLUTION: dye ser 
+			POSSIBLE SOLUTION: dry ees 
+			POSSIBLE SOLUTION: dry ese 
+			POSSIBLE SOLUTION: dry see 
+			POSSIBLE SOLUTION: drs eye 
+			POSSIBLE SOLUTION: drs yee 
+			POSSIBLE SOLUTION: yee drs 
+			POSSIBLE SOLUTION: yer des 
+			POSSIBLE SOLUTION: yer sed 
+			POSSIBLE SOLUTION: yes der 
+			POSSIBLE SOLUTION: yes red 
+			POSSIBLE SOLUTION: yds eer 
+			POSSIBLE SOLUTION: yds ere 
+			POSSIBLE SOLUTION: yrs dee 
+			POSSIBLE SOLUTION: red yes 
+			POSSIBLE SOLUTION: red sey 
+			POSSIBLE SOLUTION: rey des 
+			POSSIBLE SOLUTION: rey sed 
+			POSSIBLE SOLUTION: res dye 
+			POSSIBLE SOLUTION: res dey 
+			POSSIBLE SOLUTION: rye des 
+			POSSIBLE SOLUTION: rye sed 
+			POSSIBLE SOLUTION: sed yer 
+			POSSIBLE SOLUTION: sed rye 
+			POSSIBLE SOLUTION: sed rey 
+			POSSIBLE SOLUTION: sey der 
+			POSSIBLE SOLUTION: sey red 
+			POSSIBLE SOLUTION: see dry 
+			POSSIBLE SOLUTION: ser dye 
+			POSSIBLE SOLUTION: ser dey 
+			POSSIBLE SOLUTION: syr dee 
+Found 46 total possible solutions.
+
+Time taken: 1.7333660125732422s

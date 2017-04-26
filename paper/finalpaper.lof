@@ -1,0 +1,7 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces An example of a word jumble.\relax }}{3}
+\contentsline {figure}{\numberline {2}{\ignorespaces Cropping a word jumble.\relax }}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces Lines detected by SHLD (before cropping).\relax }}{4}
+\contentsline {figure}{\numberline {4}{\ignorespaces Inverted cropped word jumble used for particle analysis\relax }}{5}
+\contentsline {figure}{\numberline {5}{\ignorespaces Words extracted from the cropped jumble.\relax }}{7}
+\contentsline {figure}{\numberline {6}{\ignorespaces Percent reduction in solution space size through application of the algorithm.\relax }}{11}
+\contentsline {figure}{\numberline {7}{\ignorespaces Time required to narrow final anagram solution space.\relax }}{12}

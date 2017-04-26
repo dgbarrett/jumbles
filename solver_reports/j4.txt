@@ -1,0 +1,53 @@
+Starting STEP 2A (template generation) for "j4.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j4.png".
+	OCR detected ['tloch', 'elpum', 'egtsak', 'rtshah']
+	Done.
+Starting STEP 3 (solving) for "j4.png"
+	Extracted 4 clue strings from j4.png.
+		1. tloch
+		2. elpum
+		3. egtsak
+		4. rtshah
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		tloch
+			- cloth
+		elpum
+			- plume
+		egtsak
+			- gasket
+		rtshah
+			- thrash
+	Extracting answer information.
+		Answer must be 8 total letters.
+		Answer must be 2 words.
+			 word 1 : 3 letters.
+			 word 2 : 5 letters.
+		Answer must consist of "oumgstsh"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: ohg musst 
+			POSSIBLE SOLUTION: ums goths 
+			POSSIBLE SOLUTION: ums ghost 
+			POSSIBLE SOLUTION: mos thugs 
+			POSSIBLE SOLUTION: mug shots 
+			POSSIBLE SOLUTION: mug hosts 
+			POSSIBLE SOLUTION: mus goths 
+			POSSIBLE SOLUTION: mus ghost 
+			POSSIBLE SOLUTION: mss ought 
+			POSSIBLE SOLUTION: mss tough 
+			POSSIBLE SOLUTION: gum shots 
+			POSSIBLE SOLUTION: gum hosts 
+			POSSIBLE SOLUTION: gus moths 
+			POSSIBLE SOLUTION: som thugs 
+			POSSIBLE SOLUTION: sum goths 
+			POSSIBLE SOLUTION: sum ghost 
+			POSSIBLE SOLUTION: hom gusts 
+			POSSIBLE SOLUTION: hog musst 
+Found 18 total possible solutions.
+
+Time taken: 1.5667462348937988s

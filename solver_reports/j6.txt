@@ -1,0 +1,41 @@
+Starting STEP 2A (template generation) for "j6.png".
+	Generating answer template.
+	Done.
+Starting STEP 2B (Segmentation and OCR) for "j6.png".
+	OCR detected ['shast', 'doore', 'ditnic', 'catili']
+	Done.
+Starting STEP 3 (solving) for "j6.png"
+	Extracted 4 clue strings from j6.png.
+		1. shast
+		2. doore
+		3. ditnic
+		4. catili
+	Solving individual clue strings.
+	Listing possible clue solutions.
+		shast
+			- stash
+		doore
+			- roode
+			- doore
+		ditnic
+			- indict
+		catili
+			- italic
+	Extracting answer information.
+		Answer must be 12 total letters.
+		Answer must be 2 words.
+			 word 1 : 4 letters.
+			 word 2 : 8 letters.
+		Answer must consist of "sshrodeindia"
+		Loading dictionary.
+		Generating answer permutations.
+		Partitioning permutations to match answer format.
+		Checking permutations against dictionary.
+			POSSIBLE SOLUTION: shin roadside 
+			POSSIBLE SOLUTION: shad derision 
+			POSSIBLE SOLUTION: seid rhodians 
+			POSSIBLE SOLUTION: sido sheridan 
+			POSSIBLE SOLUTION: side rhodians 
+			POSSIBLE SOLUTION: sind herodias 
+		
+- TERMINATED WITHOUT COMPLETION, TOO DIFFICULT TO COMPLETE -
